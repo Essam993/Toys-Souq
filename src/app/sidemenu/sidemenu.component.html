@@ -1,0 +1,37 @@
+<ion-menu contentId="main-content" type="overlay">
+  <ion-header class="p-user-info" no-border >
+    <ion-grid >
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <ion-avatar class="ion-margin p-my-auto">
+            <img routerLink="/profile" src="https://3.bp.blogspot.com/-fDaYbjlbfls/XFXcYDcNFmI/AAAAAAABv4g/wIylZ5bp74IOD48MAKsdQoidvA4KrrBHgCLcBGAs/s320/animoji-zepeto.webp">
+          </ion-avatar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-header>
+  <ion-content >
+    <ion-list>
+      <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
+        <ion-item [routerDirection]="'root'" [routerLink]="[p.url]" >
+          <ion-icon slot="start" [name]="p.icon" class="s-side-menu0-icon"></ion-icon>
+          <ion-label color="medium">
+            {{p.title}}
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+  <ion-footer>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button size="" color="dark" fill="clear" (click)="logout()">
+            <ion-icon  slot="start" name="log-out" style="color: white;"></ion-icon>
+            <ion-label style="margin-left: 25px;">Logout</ion-label>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-footer>
+</ion-menu>

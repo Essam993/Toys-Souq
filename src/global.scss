@@ -1,0 +1,76 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+:root {
+    --ion-background-color: #ffffff;
+//    --ion-color-success: #006600;
+}
+
+/* Margin */
+.p-mx-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.p-my-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.p-m-0 {
+    margin: 0 !important;
+}
+.button-native.sc-ion-back-button-ios{
+    color: #656869;
+}
+ion-menu-button{
+    button{
+        ion-icon{
+            color: white !important;
+        }
+    }
+}
+.footer-next-btn{
+    padding: 0px;
+    ion-button{
+        margin: 0px;
+        background-color: var(--ion-color-customGreen);
+        height: 7vh;
+    }
+}
+.no-padding{
+    padding: 0px !important;
+}
+.custom-toaster-success{
+    .toast-container{
+        --background:rgb(43, 43, 42);
+    }
+    
+    .toast-md .toast-message{
+        --color: rgb(21, 224, 21);
+    }
+}

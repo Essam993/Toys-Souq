@@ -1,0 +1,79 @@
+<ion-header no-border>
+  <ion-toolbar style="--background: rgb(37, 107, 107) ;">
+    <ion-row>
+      <ion-col size="3">
+        <ion-header no-border>
+          <ion-toolbar class="new-background-color" style="--background: rgb(37, 107, 107) ;">
+            <ion-buttons slot="start">
+              <ion-back-button color="light" defaultHref="login" icon="ios-arrow-back"></ion-back-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+      </ion-col>
+      <ion-col size="8" style="margin-top: 4px;">
+        <ion-title text-center style="margin-top: 15px;color: white;"></ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid style="padding: 10px;">
+  <div style="padding: 10px; text-align: center;">
+    <h2>Submit order</h2>
+    <p>Kindly fill the application in order to complete the process</p>
+  </div>
+  <form #form="ngForm" (ngSubmit)="submitForm(form)">
+
+    <ion-item>
+      <ion-label position="floating">First Name</ion-label>
+      <ion-input autofocus='true' name="first_name" [(ngModel)]="first_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input autofocus='true' name="last_name" [(ngModel)]="last_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Address</ion-label>
+      <ion-input autofocus='true' name="address" [(ngModel)]="address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">City</ion-label>
+      <ion-input autofocus='true' name="city" [(ngModel)]="city"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Zip/Postal Code</ion-label>
+      <ion-input autofocus='true' name="postal_code" [(ngModel)]="postal_code"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Phone Number</ion-label>
+      <ion-input type="Number" autofocus='true' name="phone_number" [(ngModel)]="phone_number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Country</ion-label>
+      <ion-select (ionChange)="catched($event)" name="country_id" [(ngModel)]="country_id">
+        <ion-select-option *ngFor="let item of countries;"> {{item.name}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item *ngIf="regions">
+      <ion-label position="floating">State/Province</ion-label>
+      <ion-select name="region_id" [(ngModel)]="region_id">
+        <ion-select-option *ngFor="let region of regions;"> {{region.name}} </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item *ngIf="!regions">
+      <ion-label position="floating">State/Province</ion-label>
+      <ion-input disabled autofocus='true' name="region" [(ngModel)]="region"></ion-input>
+    </ion-item>
+
+
+    <ion-grid style="margin-bottom: 0px;" color="secondary" class="footer-next-btn">
+      <ion-button class="submit-btn" type="submit" expand="full"  size="medium"
+        (onclick)="submitForm()" style="--background: rgb(37, 107, 107) ;">Submit Order</ion-button>
+    </ion-grid>
+  </form>
+</ion-grid>
+</ion-content>

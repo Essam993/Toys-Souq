@@ -1,0 +1,132 @@
+.sc-ion-segment-md-h {
+  --background: #e4e0e0;
+}
+
+.s-page-header {
+  background-color: #f5f7fa;
+}
+
+.header-md:after {
+  background-image: none;
+}
+
+.p-store-card {
+  margin: 0px;
+  padding-top: 8px;
+  background-color: white;
+  height: 240px;
+  border-radius: 20px;
+}
+
+.p-store-card:hover {
+  box-shadow: 0 3px 0px 2px rgba(228, 236, 236, 0.699);
+}
+
+div.p-store-list-img {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  min-height: 6rem;
+}
+
+img.p-store-list-img {
+  margin: 4px auto;
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 6rem;
+}
+
+h5.p-store-list-name {
+  font-size: 16px;
+  margin: 4px auto;
+  padding: 5px;
+  min-height: 4rem;
+  max-height: 4rem;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+}
+
+h5.p-store-list-price {
+  margin: 4px auto;
+}
+.p-store-list-price {
+  p {
+    margin: 0px;
+    color: #717375;
+  }
+}
+
+.selectbtn {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  ion-icon {
+    font-size: 28px;
+    margin: auto;
+  }
+}
+.selectbtnGreen {
+  color: var(--ion-color-customGreen);
+  background-color: transparent;
+  border: 1px solid var(--ion-color-customGreen);
+  border-radius: 7px;
+}
+.selectedbtn {
+  background-color: var(--ion-color-danger);
+  border-radius: 50%;
+  color: white;
+}
+button:focus {
+  outline: 0;
+}
+.badgeard {
+  margin-right: 15px;
+  ion-icon {
+    font-size: 1.5em;
+    color: #25292b;
+  }
+}
+ion-content {
+  --ion-background-color: rgba(147, 247, 217, 0.479) ;
+  font-family: "Playfair Display", serif;
+  font-family: "Baloo 2", cursive;
+}
+.maxText-dots {
+  overflow: hidden;
+  white-space: normal;
+  height: 1.2em; /* exactly 2 lines */
+  text-overflow: -o-ellipsis-lastline;
+}
+.price-div {
+  border-top: 1px solid #eef1f0;
+  background: white;
+  background: linear-gradient(
+    90deg,
+    rgba(240, 140, 25, 0.623) 0%,
+    rgba(255, 255, 255, 0.9864320728291317) 100%
+  );
+}
+.toasterStyle {
+  border-radius: 15px;
+  text-align: center;
+  width: 60%;
+}
+
+ion-card-title,
+ion-card-subtitle,
+ion-card-content,
+.label {
+  color: rgb(69, 128, 113);
+  font-family: "Playfair Display", serif;
+  font-family: "Baloo 2", cursive;
+}
+
+
+.action-sheet-group.sc-ion-action-sheet-ios {
+  
+  --background: coral !important;
+}
+

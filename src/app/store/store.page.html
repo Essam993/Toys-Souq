@@ -1,0 +1,107 @@
+<ion-header no-border>
+  <ion-toolbar style="--background: rgb(37, 107, 107) ;">
+
+
+    <ion-row>
+      <ion-col size="2">
+        <ion-header no-border>
+          <ion-toolbar class="new-background-color" style="--background: rgb(37, 107, 107) ;">
+            <ion-buttons slot="start">
+              <ion-menu-button color="light"></ion-menu-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+      </ion-col>
+      <ion-col size="8" style="margin-top: 4px;">
+
+        <ion-searchbar animated color="light" class="searchDiv" [(ngModel)]="searchQuery" ionClear="getProducts()"
+          [showCancelButton]="true" (keyup.enter)="search(searchQuery)"></ion-searchbar>
+
+      </ion-col>
+      <ion-col size="2">
+        <ion-header no-border>
+          <ion-toolbar class="new-background-color" style="--background: rgb(37, 107, 107) ;">
+            <ion-buttons slot="end" collapse="true" class="badgeard" routerLink="/cart">
+              <ion-badge color="success" slot="end">{{badgeValue}}</ion-badge>
+              <ion-icon color="light" name="md-cart"></ion-icon>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="assets/toys-poster.png" />
+    <ion-card-header style="--background: white">
+      <ion-card-subtitle style="text-align: center;" >Welcome To</ion-card-subtitle>
+      <ion-card-title style="text-align: center;" >Toys Rocket</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card style="padding: 10px; --background: white;">
+  <ion-card-content style="padding: 10px; --background: white;">
+    <p style="text-align: center; font-size: 20px; padding: 10px;">Children have a full time occupation, that called 
+      <span style="color: rgb(240, 140, 25);">play</span>! so let them be occupied by it from thier early years until their twilight years.</p>
+  </ion-card-content>
+  </ion-card>
+
+  <ion-item style="--background: white;">
+    <ion-label class="label" style="margin-left: 30%;">Advanced Search</ion-label>
+    <ion-select [(ngModel)]="selectedCategory" interface="action-sheet" (ionChange)="getProductsByCategory($event)">
+      <ion-select-option value="0">
+        ALL
+      </ion-select-option>
+      <ion-select-option *ngFor="let category of categories" value="{{category.id}}">
+        {{category.name}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <h3 class="label" style="text-align: center;" >New arrival</h3>
+
+  <ion-grid>
+    <ion-row align-items-left>
+      <ion-col size="6" *ngFor="let product of products">
+        <ion-card class="p-store-card wow bounceInLeft">
+          <div class="p-store-list-img" (click)="openDetailsWithState(product)">
+            <img [src]=product.image_url alt="product" class="p-store-list-img" (load)="loaded = true"
+              [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded" *ngIf="product.image_url" />
+            <ion-spinner name="lines" [ngClass]="{'center':true}" *ngIf="!loaded"></ion-spinner>
+          </div>
+          <ion-text class="p-store-list-name" text-wrap>
+            <h5 class="p-store-list-name">
+              {{ (product.name.length>38)? (product.name | slice:0:38)+'..':(product.name)}}</h5>
+          </ion-text>
+
+          <ion-row class="price-div">
+            <ion-col size="6" size-sm>
+              <ion-text color="success" class="p-store-list-price">
+                <p>Price</p>
+                <h6 style="margin-top: 0px; color:#19271f" class="p-store-list-price">{{product.price}} EUR</h6>
+              </ion-text>
+            </ion-col>
+            <ion-col align-self-center class="ion-text-right" size="6" size-sm>
+
+              <button class="selectbtn" [ngClass]="selectbtnGreen" (click)="addToCart(product)">
+                <ion-icon style="background-color: rgba(255, 255, 255, 0.8); color:rgb(38, 95, 109)" name="cart">
+                </ion-icon>
+              </button>
+            </ion-col>
+
+
+          </ion-row>
+
+        </ion-card>
+      </ion-col>
+      <ion-title *ngIf="products.length < 1" text-center>No results found.</ion-title>
+    </ion-row>
+    <div
+  style="height: 50px; background-color: rgb(37, 107, 107); text-align: center; margin-top: 20px;color: white; font-weight: 800; padding-top: 15px;">
+  Toys Rocket
+</div>
+  </ion-grid>
+</ion-content>

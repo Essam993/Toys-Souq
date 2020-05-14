@@ -1,0 +1,56 @@
+<ion-header no-border>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <!-- <ion-back-button defaultHref="dashboard"  icon="ios-arrow-back" ></ion-back-button> -->
+      </ion-buttons>
+      <ion-title text-center> Checkout</ion-title>               
+    </ion-toolbar>
+</ion-header>
+<ion-content class="contentbg">
+  <ion-grid>
+    <ion-list>
+      <ion-radio-group>
+        <ion-list-header class="list-header">
+          Order
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>
+            <ion-icon name="speedometer"></ion-icon> Order now</ion-label>
+          <ion-radio color="secondary" value="order" ></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label><ion-icon name="timer"></ion-icon> Schedule order</ion-label>
+          <ion-radio color="secondary" value="schedule" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <ion-list>
+      <ion-radio-group>
+        <ion-list-header class="list-header">
+          Payment
+        </ion-list-header>
+
+        <ion-item >
+          <ion-label><ion-icon name="cash"></ion-icon> Cash On Delivery</ion-label>
+          <ion-radio color="secondary" value="cod" ></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label><ion-icon name="card"></ion-icon> Pay by Credit Card</ion-label>
+            <ion-radio color="secondary" value="credit"  ></ion-radio>
+          </ion-item>
+        <!--   <ion-item>
+          <ion-label>Credit Card</ion-label>
+          <ion-radio value="credit"></ion-radio>
+        </ion-item> -->
+      </ion-radio-group>
+    </ion-list>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-grid class="footer-next-btn">
+    <ion-button expand="full" color="secondary" size="medium" (click)="check()">Confirm</ion-button>
+  </ion-grid>
+</ion-footer>

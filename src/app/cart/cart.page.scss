@@ -1,0 +1,72 @@
+ion-toolbar{
+    --ion-background-color: #19271f;
+}
+
+ion-label{
+    color: rgb(37, 107, 107) ;
+}
+
+.promocode{
+    ion-input{
+        border: 1px solid #a5b3ae;
+        border-radius: 17px;
+        input{
+            padding-left: 15px;
+        }
+    }
+    .applyDiv{
+        display: flex;
+        align-items: center;
+        ion-button{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+.totalAmount{
+    font-weight: 600;
+    color: #d4692a;
+    margin-top: 14px;
+}
+.cost-title{
+    color: #a3b3ae;
+    text-align: right;
+}
+.contentbg{
+
+    --ion-background-color:rgba(147, 247, 217, 0.479) ;
+    ion-list{
+        padding-top: 0px;
+    }
+}
+.itemCard{
+    --background: white;
+    margin: 5px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    .name{
+        margin-top: 10px;
+        white-space: pre-wrap;
+    }
+    .price{
+        height: 40px;
+        border-top: 1px solid #f5f7fb;
+        margin-top: 11px;
+        padding-top: 5px;
+    }
+    .close{
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: rgb(37, 107, 107);
+        border-radius: 0px;
+        height: 24px;
+        width: 24px;
+        border-bottom-left-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+}

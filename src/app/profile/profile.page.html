@@ -1,0 +1,63 @@
+<ion-header no-border>
+  <ion-toolbar style="--background: rgb(37, 107, 107) ;">
+    <ion-row>
+      <ion-col size="3">
+        <ion-header no-border>
+          <ion-toolbar class="new-background-color" style="--background: rgb(37, 107, 107) ;">
+            <ion-buttons slot="start">
+              <ion-back-button color="light"  defaultHref="store" icon="ios-arrow-back"></ion-back-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+      </ion-col>
+      <ion-col size="8" style="margin-top: 4px;">
+        <ion-title text-center style="margin-top: 15px;color: white;"></ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid style="padding: 15px;">
+
+  <ion-avatar>
+    <img
+      src="https://3.bp.blogspot.com/-fDaYbjlbfls/XFXcYDcNFmI/AAAAAAABv4g/wIylZ5bp74IOD48MAKsdQoidvA4KrrBHgCLcBGAs/s320/animoji-zepeto.webp">
+  </ion-avatar>
+
+  <form #form="ngForm" (ngSubmit)="submitForm(form)">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+
+      <ion-item class="p-profile-field">
+
+        <ion-label position="stacked" >First Name: <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="text" name="firstname"></ion-input>
+      </ion-item>
+
+      <ion-item class="p-profile-field">
+
+        <ion-label position="stacked">Last Name: <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="text" name="lastname"></ion-input>
+      </ion-item>
+
+      <ion-item class="p-profile-field">
+
+        <ion-label position="stacked" class="p-profile-field-label">Email: <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="email" name="email"></ion-input>
+      </ion-item>
+
+
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" style="--background: rgb(37, 107, 107) ;" type="submit" class="ion-no-margin" routerLink="/store">Save</ion-button>
+    </div>
+  </form>
+
+</ion-grid>
+
+</ion-content>

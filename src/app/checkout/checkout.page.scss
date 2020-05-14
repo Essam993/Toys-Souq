@@ -1,0 +1,23 @@
+.list-header{
+    font-size: 18px;
+    color: #a5b3ae;
+    font-weight: 100;
+}
+.contentbg{
+
+    --ion-background-color:#f5f7fb;
+    ion-grid{
+        padding: 0px;
+        padding-top: 10px;
+    }
+    ion-list-header{
+        --background: #ffffff;
+    }
+    ion-item{
+        --background: #ffffff;
+        ion-icon{
+            color: #a5b3ae;
+            margin-right: 5px;
+        }
+    }
+}

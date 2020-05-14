@@ -1,0 +1,27 @@
+.customScroll{
+    overflow-y: hidden;
+
+    
+}
+.aligncenter{
+    // height: 100%;
+    .flexDiv{
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+}
+.loginDiv{
+    ion-item{
+        margin-bottom: 14px;
+    }
+}
+
+ion-button {
+ --background:#19271f;
+
+}
+
+.item-interactive.ion-valid {
+    --highlight-background: #19271f;
+}

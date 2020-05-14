@@ -1,0 +1,56 @@
+.searchDiv{
+    .searchbar-input.sc-ion-searchbar-md {
+        box-shadow: none !important;
+        border-radius: 20px;
+    }
+    .searchbar-input {
+        border: 0 !important;
+        box-shadow: none !important;
+    }
+}
+.selectbtn{
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    margin: 8px;
+    ion-icon{
+        font-size: 25px;
+        margin: auto;
+    }
+}
+.selectbtnGreen{
+    color: var(--ion-color-customGreen);
+    background-color: transparent;
+    border: 1px solid var(--ion-color-customGreen);
+    border-radius: 7px;
+}
+.selectedbtn{
+    background-color: var(--ion-color-danger);
+    border-radius: 50%;
+    color: white;
+}
+
+button:focus {outline:0;}
+
+.badgeard{
+    margin-right: 15px;
+    ion-icon{
+        font-size: 1.5em;
+        color: #25292b;
+    }
+    
+}
+ion-title{
+    font-weight: 100;
+    color: #25292b;
+}
+.toasterStyle {
+    text-align:center;
+    background-color: black;
+    color: white;
+}
+.viewcard{
+    h2{
+        color: #25292b;
+    }
+}

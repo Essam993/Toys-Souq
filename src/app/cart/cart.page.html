@@ -1,0 +1,102 @@
+<ion-header no-border>
+  <ion-toolbar style="--background: rgb(37, 107, 107) ;">
+    <ion-row>
+      <ion-col size="3">
+        <ion-header no-border>
+          <ion-toolbar class="new-background-color" style="--background: rgb(37, 107, 107) ;">
+            <ion-buttons slot="start">
+              <ion-back-button color="light"  defaultHref="store" icon="ios-arrow-back"></ion-back-button>
+            </ion-buttons>
+            <!-- <p>Home</p> -->
+          </ion-toolbar>
+        </ion-header>
+      </ion-col>
+      <ion-col size="8" style="margin-top: 4px;">
+        <ion-title></ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contentbg">
+  <ion-grid>
+    <ion-list>
+      <ion-item *ngFor="let product of cartData" class="itemCard">
+        <div class="close" (click)="removeProduct(product)">
+          <ion-icon name="close">
+          </ion-icon>
+        </div>
+        <ion-avatar slot="start">
+          <img [src]= product.image_url alt="product" class="p-store-list-img"  (load)="loaded = true" [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded" *ngIf="product.image_url"/>
+          <ion-spinner name="lines" [ngClass]="{'center':true}" *ngIf="!loaded"></ion-spinner>
+
+        </ion-avatar>
+        <ion-label>
+          <h2 class="name">{{product.name}}</h2>
+          <ion-row class="price">
+            <ion-col> {{product.price}} EUR</ion-col>
+
+            <ion-col>
+              <button style="background-color: rgba(255, 0, 0, 0.63); padding: 0; width: 25px; height: 25px; border-radius: 50%;" class="selectbtn" class="selectbtnDanger" (click) = "decrement(product)">
+                <ion-icon style="color: white; font-weight: bolder; font-size: 25px;" name="remove">
+
+                </ion-icon>
+              </button>
+
+              <ion-col style="font-size: 27px;">{{product.qty || 1}}</ion-col>
+              <button style="background-color: rgba(0, 128, 0, 0.61); padding: 0; width: 25px; height: 25px; border-radius: 50%;" class="selectbtn" class="selectbtnGreen" (click) = "increment(product)">
+
+                <ion-icon style="color: white; font-weight: bolder; font-size: 25px;" name="add">
+
+                </ion-icon>
+              </button>
+            </ion-col>
+
+          </ion-row>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+
+  <ion-grid style="padding: 22px;">
+    <ion-row >
+      <ion-col size="6" class="cost-title">
+        <ion-label>Cart Subtotal</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-text> {{cartData.length > 0 ? cartTotals.base_subtotal : 0}} EUR</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col size="6" class="cost-title">
+        <ion-label color="danger">Discount</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-text> {{cartData.length > 0 ? cartTotals.base_discount_amount : 0}} EUR</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col size="6" class="cost-title">
+        <ion-label>Shipping</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-text> {{cartData.length > 0 ? (cartTotals.base_subtotal != 0 ? 35 : 0) : 0}} EUR</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row class="totalAmount">
+      <ion-col size="6" class="cost-title">
+        <ion-label color="success">Total</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-text>{{(cartData.length > 0 ? cartTotals.grand_total : 0 )}} EUR</ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="footer-next-btn">
+    <ion-button style="--background: rgb(37, 107, 107) ;" *ngIf="cartData.length > 0" expand="full" size="medium" (click)="toSubmitOrder();">Next</ion-button>
+  </ion-grid>
+</ion-footer>

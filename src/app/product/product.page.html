@@ -1,0 +1,69 @@
+<ion-header no-border>
+  <ion-toolbar style="--background: rgb(37, 107, 107) ;">
+    <ion-row>
+      <ion-col size="3">
+        <ion-header no-border>
+          <ion-toolbar class="new-background-color" style="--background: rgb(37, 107, 107) ;">
+            <ion-buttons slot="start">
+              <ion-back-button color="light" defaultHref="store" icon="ios-arrow-back"></ion-back-button>
+            </ion-buttons>
+            <!-- <p>Home</p> -->
+          </ion-toolbar>
+        </ion-header>
+      </ion-col>
+      <ion-col size="7" style="margin-top: 4px;">
+        <ion-title text-center style="margin-top: 15px;color: white;"></ion-title>
+      </ion-col>
+      <ion-col size="2">
+        <ion-header no-border>
+          <ion-toolbar class="new-background-color" style="--background: rgb(37, 107, 107) ;">
+            <ion-buttons slot="end" collapse="true"  class="badgeard" routerLink="/cart">
+              <ion-badge slot="end" color="danger">{{badgeValue}}</ion-badge>
+              <ion-icon color="light" name="md-cart"></ion-icon>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+
+    <ion-card>
+
+      <div style="padding: 15px;">
+      <img style="margin: auto;" [src]=product.image_url alt="product" class="p-store-list-img" (load)="loaded = true"
+        [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded" *ngIf="product.image_url" />
+      </div>
+
+      <ion-card-header>
+        <ion-card-subtitle>Rocket Item</ion-card-subtitle>
+        <ion-card-title class="p-store-list-name">{{product.name}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content class="p-store-list-name">
+        {{product.description}}
+        <br>
+        <ion-col size="4">
+          <ion-text class="p-store-list-price">
+            <h1>Price</h1>
+          </ion-text>
+        </ion-col>
+        <ion-col size="6">
+          <ion-text class="p-store-list-price">
+            <h1 class="p-store-list-price">{{product.price}} EUR</h1>
+          </ion-text>
+        </ion-col>
+        <ion-button style="--background: rgb(37, 107, 107) ; font-size: 20px;"expand="full" size="medium"
+        (click)="addToCart(product)">
+        <ion-icon style="font-size:30px" name="md-cart"></ion-icon> &nbsp; &nbsp;
+          Add To Cart
+        </ion-button> 
+      </ion-card-content>
+      
+    </ion-card>
+
+  </ion-grid>
+</ion-content>

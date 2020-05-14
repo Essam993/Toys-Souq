@@ -1,0 +1,60 @@
+CREATE TABLE IF NOT EXISTS users (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	first_name TEXT NOT NULL,
+	last_name TEXT NOT NULL,
+	email TEXT NOT NULL UNIQUE,
+	password TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS categories (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	name TEXT NOT NULL,
+);
+
+CREATE TABLE IF NOT EXISTS products (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	category_id INTEGER PRIMARY KEY,
+	
+	FOREIGN KEY (category_id) 
+      REFERENCES categories (category_id) 
+         ON DELETE CASCADE 
+         ON UPDATE NO ACTION,
+		 
+	name TEXT NOT NULL,
+	description TEXT NOT NULL,
+	price DOUBLE NOT NULL,
+	image TEXT NOT NULL,
+);
+
+
+CREATE TABLE IF NOT EXISTS orders (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	first_name TEXT NOT NULL,
+	last_name TEXT NOT NULL,
+	address TEXT NOT NULL,
+	city TEXT NOT NULL,
+	zip_code TEXT NOT NULL,
+	phone TEXT NOT NULL,
+	country TEXT NOT NULL,
+	region TEXT NOT NULL,
+	total_price DOUBLE NOT NULL,
+	created_at DATETIME NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS order_details (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	product_id INTEGER PRIMARY KEY,		
+	order_id INTEGER PRIMARY KEY,		
+
+	FOREIGN KEY (product_id) 
+      REFERENCES products (product_id) 
+         ON DELETE NO ACTION 
+         ON UPDATE NO ACTION,
+		 
+	FOREIGN KEY (order_id) 
+      REFERENCES orders (order_id) 
+         ON DELETE CASCADE 
+         ON UPDATE NO ACTION,
+		 
+	price DOUBLE NOT NULL,
+);

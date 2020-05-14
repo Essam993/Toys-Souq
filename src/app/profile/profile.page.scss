@@ -1,0 +1,53 @@
+
+
+.p-prfile-field-label {
+    color: #545454;
+}
+
+ion-item {
+    margin: 8px auto;
+}
+.avatarDiv{
+    height: 102px;
+    width: 102px;
+    ion-icon{
+        position: absolute;
+        background: #c5dbff;
+        padding: 8px;
+        border-radius: 8px;
+        color: white;
+        bottom: 12px;
+        right: 24px;
+    }
+}
+
+
+.item-interactive.ion-valid {
+    --highlight-background: #19271f;
+}
+
+ion-content{
+
+    --ion-background-color:rgba(147, 247, 217, 0.479) ;
+}
+
+
+ion-avatar{
+    width: 250px;
+    height: 250px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+ion-item{
+    --ion-background-color: rgba(255, 255, 255, 0.836);
+    border-radius: 20px;
+}
+
+ion-list{
+    background-color: transparent;
+
+}
